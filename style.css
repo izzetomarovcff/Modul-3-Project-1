@@ -4,9 +4,11 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
+    
 }
 body{
     width: 100vw;
+    overflow-x: hidden;
 }
 .container{
     width: 100%;
@@ -16,7 +18,7 @@ body{
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 4.34vw;
     background: #F5F5F6;
 }
 .logo{
@@ -67,7 +69,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 55.99vw;
-    margin-top: 4.861vw;
+    margin-top: 55.999px;
     margin-left: 21.962vw;
 }
 .head{
@@ -82,13 +84,13 @@ main{
 .items{
     display: flex;
     flex-direction: row;
-    margin-top: 2.865vw;
+    margin-top: 33.005px;
 }
 .item{
     display: flex;
     flex-direction: column;
     width: 22.569vw;
-    margin-right: 123px;
+    margin-right: 10.677vw;
 }
 .exchhead{
     font-style: normal;
@@ -102,18 +104,18 @@ main{
 .currency{
     display: flex;
     flex-direction: row;
-    margin-top: 0.868vw;
+    margin-top: 9.999px;
 }
 .curitem{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5.431vw;
-    height: 28px;
+    height: 2.431vw;
     font-style: normal;
     font-weight: 400;
     font-size: 1.042vw;
-    line-height: 14px;
+    line-height: 1.215vw;
     display: flex;
     align-items: center;
     text-align: center;
@@ -123,10 +125,10 @@ main{
     cursor: pointer;
 }
 .currency .curitem:first-child{
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 0.26vw 0px 0px 0.26vw;
 }
 .currency .curitem:last-child{
-    border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 0.26vw 0.26vw 0px;
 }
 .one .curitem:first-child{
     color: white;
@@ -139,7 +141,7 @@ main{
     flex-direction: column;
     width: 21.699vw;
     border: 1px solid #E5E5E5;
-    border-radius: 3px;
+    border-radius: 0.26vw;
     margin-top: 1.736vw;
 }
 .value{
@@ -151,8 +153,8 @@ main{
     font-size: 3.125vw;
     line-height: 3.646vw;
     color: #000000;
-    margin-top: 0.955vw;
-    margin-left: 1.215vw;
+    margin-top: 11.002px;
+    margin-left: 13.997px;
     border: none;
     outline: none;
     appearance: none;
@@ -170,4 +172,146 @@ input::-webkit-inner-spin-button {
     font-size: 1.042vw;
     line-height: 1.215vw;
     color: #C6C6C6;
+}
+@media (min-width : 300px) and (max-width : 810px){
+    .header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60.997px;
+        background: #F5F5F6;
+    }
+    .menu{
+        display: none;
+    }
+    .logo{
+        width: 17.801vw;
+        height: 23.005px;
+        margin: 0px 27.78px 0px 8.681vw;
+    }
+    .login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 11.601vw;
+        height: 6.601vw;
+        background: #FFFFFF;
+        border-radius: 3.995px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.2vw;
+        line-height: 2.599vw;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.06em;
+        color: #000000;
+        margin-left: 109.002px;
+        margin-right: 50px;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 90.001vw;
+        margin-top: 20.999px;
+        margin-left: 10vw;
+    }
+    .head{
+        width: 81.6vw;
+        height: 37.003px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 5.4vw;
+        line-height: 8.4vw;
+        color: #000000;
+    }
+    .items{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.601vw;
+        width: 100%;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+        width: 91.999vw;
+        margin-top: 2vw;
+    }
+    .exchhead{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4.201vw;
+        line-height: 2.799vw;
+        display: flex;
+        align-items: center;
+        color: #9F9F9F;
+    }
+    .currency{
+        display: flex;
+        flex-direction: row;
+        margin-top: 15.999px;
+    }
+    .curitem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14.513vw;
+        height: 7.601vw;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.001vw;
+        line-height: 2.799vw;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #C6C6C6;
+        border: 1px solid #E5E5E5;
+        border-collapse:collapse;
+        cursor: pointer;
+    }
+    .currency .curitem:first-child{
+        border-radius: 1.199vw 0px 0px 1.199vw;
+    }
+    .currency .curitem:last-child{
+        border-radius: 0px 1.199vw 1.199vw 0px;
+    }
+    .change{
+        display: flex;
+        flex-direction: column;
+        width: 57.994vw;
+        border: 1px solid #E5E5E5;
+        border-radius: 2.995px;
+        margin-top: 19.999px;
+    }
+    .value{
+        width: 48.401vw;
+        height: 8.4vw;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8.8vw;
+        line-height: 8.4vw;
+        color: #000000;
+        margin-top: 11.002px;
+        margin-left: 13.997px;
+        border: none;
+        outline: none;
+        appearance: none;
+    }
+    .cost{
+        margin-top: 19.999px;
+        margin-left: 16.001px;
+        margin-bottom: 15.999px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3.001vw;
+        line-height: 2.799vw;
+        color: #C6C6C6;
+    }
+    .itemtwo{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
