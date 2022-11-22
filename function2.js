@@ -30,14 +30,7 @@ const run = async (from, to, side) => {
                 return response.json()
             })
             .then(data => {
-                console.log(data)
-                costone.innerText = `1 ${from} = ${Object.values(data.rates)[0]} ${to}`
-                inputOne.addEventListener("input", () => {
-                    inputTwo.value = inputOne.value * Object.values(data.rates)[0]
-                })
                 inputTwo.value = inputOne.value * Object.values(data.rates)[0]
-                
-
             })
     } else {
         fetch(`${url}?base=${to}&symbols=${from}`)
@@ -45,14 +38,34 @@ const run = async (from, to, side) => {
                 return response.json()
             })
             .then(data => {
-                console.log(data)
-                costtwo.innerText = `1 ${to} = ${Object.values(data.rates)[0]} ${from}`
-                inputTwo.addEventListener("input", () => {
-                    inputOne.value = inputTwo.value * Object.values(data.rates)[0]
-                })
                 inputOne.value = inputTwo.value * Object.values(data.rates)[0]
             })
     }
+
+    fetch(`${url}?base=${from}&symbols=${to}`)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        costone.innerText = `1 ${from} = ${Object.values(data.rates)[0]} ${to}`
+        inputOne.addEventListener("input", () => {
+            inputTwo.value = inputOne.value * Object.values(data.rates)[0]
+        })
+    })
+
+    fetch(`${url}?base=${to}&symbols=${from}`)
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        costtwo.innerText = `1 ${to} = ${Object.values(data.rates)[0]} ${from}`
+        inputTwo.addEventListener("input", () => {
+            inputOne.value = inputTwo.value * Object.values(data.rates)[0]
+        })
+    })
+
+    
+
 }
 run("RUB", "USD", "base")
 run("RUB", "USD", "")
@@ -73,6 +86,6 @@ valElments2.forEach((item) => {
                 intext2 = element.innerText
             }
         })
-        run(item.innerText, intext2, "base")
+        run(intext2, item.innerText, "base")
     })
 })
