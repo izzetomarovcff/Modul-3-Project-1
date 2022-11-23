@@ -9,6 +9,9 @@ const valElments1 = document.querySelectorAll(".itemone .curitem")
 const valElments2 = document.querySelectorAll(".itemtwo .curitem")
 const inputOne = document.querySelector(".itemone .value")
 const inputTwo = document.querySelector(".itemtwo .value")
+const menuelement = document.querySelector(".mobmenubutton")
+const menumob = document.querySelector(".mobilemenu")
+const close = document.querySelector(".close")
 const selecet = (val) => {
     val.forEach((item) => {
         item.addEventListener("click", (e) => {
@@ -83,6 +86,12 @@ valElments2.forEach((item) => {
         })
         run(intext2, item.innerText, "base")
     })
+})
+menuelement.addEventListener("click",()=>{
+    menumob.style.display = "flex"
+})
+close.addEventListener("click",()=>{
+    menumob.style.display = "none"
 })
 run("RUB", "USD", "base")
 run("RUB", "USD", "")
