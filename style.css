@@ -181,6 +181,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width : 300px) and (max-width : 810px){
+    body{
+        overflow-x: hidden;
+    }
     .header{
         display: flex;
         flex-direction: row;
