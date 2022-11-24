@@ -46,26 +46,26 @@ const run = async (from, to, side) => {
     }
 
     fetch(`${url}?base=${from}&symbols=${to}`)
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        costone.innerText = `1 ${from} = ${Object.values(data.rates)[0]} ${to}`
-        inputOne.addEventListener("input", () => {
-            inputTwo.value = inputOne.value * Object.values(data.rates)[0]
+        .then(response => {
+            return response.json()
         })
-    })
+        .then(data => {
+            costone.innerText = `1 ${from} = ${Object.values(data.rates)[0]} ${to}`
+            inputOne.addEventListener("input", () => {
+                inputTwo.value = inputOne.value * Object.values(data.rates)[0]
+            })
+        })
 
     fetch(`${url}?base=${to}&symbols=${from}`)
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        costtwo.innerText = `1 ${to} = ${Object.values(data.rates)[0]} ${from}`
-        inputTwo.addEventListener("input", () => {
-            inputOne.value = inputTwo.value * Object.values(data.rates)[0]
+        .then(response => {
+            return response.json()
         })
-    })
+        .then(data => {
+            costtwo.innerText = `1 ${to} = ${Object.values(data.rates)[0]} ${from}`
+            inputTwo.addEventListener("input", () => {
+                inputOne.value = inputTwo.value * Object.values(data.rates)[0]
+            })
+        })
 }
 valElments1.forEach((item) => {
     item.addEventListener("click", () => {
@@ -87,11 +87,20 @@ valElments2.forEach((item) => {
         run(intext2, item.innerText, "base")
     })
 })
-menuelement.addEventListener("click",()=>{
+menuelement.addEventListener("click", () => {
     menumob.style.display = "flex"
 })
-close.addEventListener("click",()=>{
+close.addEventListener("click", () => {
     menumob.style.display = "none"
 })
+function myFunction(x) {
+    if (x.matches) {
+    } else {
+        menumob.style.display = "none"
+    }
+}
+var x = window.matchMedia("(max-width: 810px)")
+myFunction(x)
+x.addListener(myFunction)
 run("RUB", "USD", "base")
 run("RUB", "USD", "")
