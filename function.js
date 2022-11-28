@@ -11,14 +11,12 @@ const menuBtn = document.querySelector('.hamburger');
 const menu = document.querySelector('.nav-content ul');
 const container = document.querySelector('.container');
 let curApiRateIn, curApiRateOut, space = 0;
-
 activeBtn.forEach((item, index) => {
     if (index == 0)
         inCur = item.value;
     if (index == 1)
         outCur = item.value;
 });
-
 
 const callApi = async (e) => {
     window.addEventListener('offline', () => {
@@ -57,7 +55,10 @@ function appendRate(e) {
         }
     }
 }
-inputIn.addEventListener('keyup', (e) => {
+inputIn.addEventListener('input', (e) => {
+    if(inputIn.value[0] == "."){
+        inputIn.value = "0."
+    }
     if (e.target.value.length < 14) {
         if (e.target.value == '') {
             inputOut.value = "";
@@ -67,7 +68,10 @@ inputIn.addEventListener('keyup', (e) => {
     }
 });
 
-inputOut.addEventListener('keyup', (e) => {
+inputOut.addEventListener('input', (e) => {
+    if(inputOut.value[0] == "."){
+        inputOut.value = "0."
+    }
     if (e.target.value.length < 14) {
         if (e.target.value == '') {
             inputIn.value = '';
@@ -76,7 +80,6 @@ inputOut.addEventListener('keyup', (e) => {
         inputIn.value = commify(inputIn.value);
     }
 });
-
 
 eventListener();
 
